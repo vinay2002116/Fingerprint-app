@@ -10,6 +10,7 @@ export default function Home() {
         const data = await res.json();
         setVisitorId(data.visitorId);
       } else {
+        console.error("Failed to fetch visitor ID");
         setVisitorId("Blocked");
       }
     }

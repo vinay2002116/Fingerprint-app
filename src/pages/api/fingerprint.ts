@@ -11,6 +11,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // Log the visitorId or use it for further checks
   console.log(visitorId);
 
+  console.log(req.headers['user-agent']);
+
   // Example check: Block if visitorId matches known scraper fingerprints
   if (isKnownScraper(visitorId)) {
     return res.status(403).json({ message: 'Access denied' });
